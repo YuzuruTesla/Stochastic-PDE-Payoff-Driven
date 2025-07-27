@@ -61,11 +61,6 @@ function P_wv_criticalbounds
             w_v_III(i) = min(sols);
         end
     
-        % % (IV) \beta=0 bound
-        % num = (a1*D_v + b2*D_u)*(u0+v0)^2 ...
-        %       + D_u*w_u*(V+C)*u0*(b2*v0 + a2*u0);
-        % den = D_v * V * v0 * (a1*u0 + b1*v0);
-        % w_v_IV(i) = num ./ den;
     end
     
     % 3) Plot
@@ -78,7 +73,6 @@ function P_wv_criticalbounds
     plot(w_u_vec, w_v_I,   'LineWidth', 6, 'DisplayName', '$w_v^I$',   'Color', [255/255  95/255   5/255]);
     plot(w_u_vec, w_v_II,  'LineWidth', 6, 'DisplayName', '$w_v^{II}$','Color', [0 0.24 0.47]);
     plot(w_u_vec, w_v_III, 'LineWidth', 6, 'DisplayName', '$w_v^{III}$','Color', [1 0.8 0], 'LineStyle', '--');
-   % plot(w_u_vec, w_v_IV,  'LineWidth', 6, 'DisplayName', '$w_v^{IV}$', 'Color', [0.2 0.7 0.2], 'LineStyle', '--');
     
     xlabel('Payoff-driven weight for Hawks $w_u$', 'FontSize', 23);
     ylabel('Payoff-driven weight for Doves $w_v$', 'FontSize', 23);
