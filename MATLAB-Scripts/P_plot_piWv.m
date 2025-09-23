@@ -13,7 +13,7 @@ h_scatter_v = scatter(w_v, p_D, dotSize, 'filled', 'DisplayName', 'Average payof
 yline(2/3,  'LineWidth', 3, 'DisplayName', 'Uniform $p_H$ \& $p_D$', 'Color', [0 0 0], 'LineStyle', '--');
 h_line_critical = xline(0.849, '--','Color', [0.5 0.5 0.5], 'LineWidth', 3, 'DisplayName', 'Critical $w_v^*$');
 xlim([0.75, 1.1]);
-xlabel('Sensitivity of Payoff-Driven Motion $w_v$','FontSize',23,'FontName','Arial','Interpreter','latex');
+xlabel('Payoff Sensitivity of Doves $w_v$','FontSize',23,'FontName','Arial','Interpreter','latex');
 ylabel('Payoff', 'fontsize', 23, 'fontname', 'arial','Interpreter', 'latex');
 legend('show', 'Location', 'best', 'fontsize', 17, 'Interpreter', 'latex', 'fontname', 'arial');
 set(gca, 'FontSize', 20);

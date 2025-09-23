@@ -4,7 +4,7 @@ seed = 10;
 rng(seed,"twister");
 
 L = 40;
-maxt = 2000000;
+maxt = 0.0008;
 
 x = linspace(0, L, 4001); 
 t = linspace(0, maxt, 201); 
@@ -87,7 +87,7 @@ plot(x, p_D_final, 'LineWidth', 4, 'DisplayName', 'Patterned $p_D$', 'Color',[25
 yline(2/3,  'LineWidth', 4, 'DisplayName', 'Uniform $p_H$ \& $p_D$', 'Color',[0.5 0.5 0.5], 'LineStyle', '--');
 xlabel('Position $x$', 'FontSize', 23, 'FontName', 'arial', 'Interpreter', 'latex');
 ylabel('Payoff',            'FontSize', 23, 'FontName', 'arial', 'Interpreter', 'latex');
-ylim([0.55 0.85]);
+%ylim([0.55 0.85]);
 legend('show', 'Location', 'best', 'FontSize', 17, 'Interpreter', 'latex', 'FontName', 'arial');
 set(gca, 'FontSize', 23);
 grid on;
@@ -101,7 +101,7 @@ yline(4000/9,'LineWidth', 4, 'DisplayName', 'Uniform $u$', 'Color',[0.5 0.5 0.5]
 yline(2000/9,'LineWidth', 4, 'DisplayName', 'Uniform $v$', 'Color',[0.5 0.5 0.5], 'LineStyle', '-.');
 xlabel('Position $x$',           'FontSize', 23, 'FontName', 'arial', 'Interpreter', 'latex');
 ylabel('Density of Individuals','FontSize', 23, 'FontName', 'arial', 'Interpreter', 'latex');
-ylim([100 500]);
+%ylim([100 500]);
 legend('show', 'Location', 'best', 'FontSize', 17, 'Interpreter', 'latex', 'FontName', 'arial');
 set(gca, 'FontSize', 23);
 grid on;
@@ -113,10 +113,13 @@ function [c,f,s] = pdeFunction(~,~,U,DuDx)
     ux = DuDx(1); vx = DuDx(2);
 
     % parameters
-    D_u   = 4.2;
+    %D_u   = 4.2;
+    D_u   = 0.1;
     D_v   = 0.1;
-    w_u   = 0.05;
-    w_v   = 0.85;
+    w_u   = 0.1;
+    w_v   = 3;
+    % w_u   = 0.05;
+    % w_v   = 0.85;
     kappa = 0.001;
     V = 4;
     C = 6;

@@ -1,4 +1,4 @@
-T = readtable('P_average_uv_test.csv');
+T = readtable('P_average_uv.csv');
 
 w_v = T{:,1};
 u   = T{:,2};
@@ -17,7 +17,7 @@ xline(0.849,'--','LineWidth',3, 'DisplayName','Critical $w_v^*$','Color',[0.5 0.
 
 xlim([0.75, 1.1]);
 ylim([100, 500]);
-xlabel('Payoff-sensitivity of Doves $w_v$','FontSize',23,'FontName','Arial','Interpreter','latex');
+xlabel('Payoff Sensitivity of Doves $w_v$','FontSize',23,'FontName','Arial','Interpreter','latex');
 ylabel('Density of Individuals','FontSize',23,'FontName','Arial','Interpreter','latex');
 legend('Location','best','FontSize',17,'Interpreter','latex','FontName','Arial');
 grid on;

@@ -16,13 +16,13 @@ b_2 =  V * (V - C) * ( C - 2*V ) / ( 2*C^2 );
 u_0 = -(V^2*(V - C)) / (2*kappa*C^2);
 v_0 =  ( V *(V - C)^2 )/(2*kappa*C^2);
 
-m_1 = - w_u * (V+C)*v_0 / (2*(u_0+v_0)^2);
-n_1 =  w_u * (V+C)*u_0 / (2*(u_0+v_0)^2);
-m_2 =  w_v * V *v_0 / (2*(u_0+v_0)^2);
-n_2 = - w_v * V*u_0 / (2*(u_0+v_0)^2);
+m_1 = -  (V+C)*v_0 / (2*(u_0+v_0)^2);
+n_1 =   (V+C)*u_0 / (2*(u_0+v_0)^2);
+m_2 =   V *v_0 / (2*(u_0+v_0)^2);
+n_2 = -  V*u_0 / (2*(u_0+v_0)^2);
 
-m_values = linspace(1, 8000, 2000);
-k = m_values * pi / L;
+m_values = linspace(1, 4000, 2000);
+k = 2 * m_values * pi / L;
 
 % -- common term --
 S = (k .* sin(k * rho)) / rho;
@@ -45,17 +45,19 @@ set(groot, ...
 
 % -- plot det(A) --
 figure;
-plot(m_values, det_B, '.', 'MarkerSize', 8,'MarkerEdgeColor',[0 0.24 0.47],'MarkerFaceColor',[0 0.24 0.47]);
+plot(m_values, det_B, '.', 'MarkerSize', 12,'MarkerEdgeColor',[0 0.24 0.47],'MarkerFaceColor',[0 0.24 0.47]);
+yline(0, '--','Color',[1 0.8 0], 'LineWidth', 4);
 grid on;
 xlabel('Wavenumber $m$', 'Interpreter', 'latex');
 ylabel('$\det(B)$', 'Interpreter', 'latex');
-set(gca, 'FontSize', 20);
+set(gca, 'FontSize', 23);
 
 
 % -- plot tr(A) --
 figure;
-plot(m_values, tr_B, '.', 'MarkerSize', 8,'MarkerEdgeColor',[0 0.24 0.47],'MarkerFaceColor',[0 0.24 0.47]);
+plot(m_values, tr_B, '.', 'MarkerSize', 12,'MarkerEdgeColor',[0 0.24 0.47],'MarkerFaceColor',[0 0.24 0.47]);
+yline(0, '--','Color',[1 0.8 0], 'LineWidth', 4);
 grid on;
 xlabel('Wavenumber $m$', 'Interpreter','latex');
 ylabel('$\mathrm{tr}(B)$', 'Interpreter','latex');
-set(gca, 'FontSize', 20);
+set(gca, 'FontSize', 23);
