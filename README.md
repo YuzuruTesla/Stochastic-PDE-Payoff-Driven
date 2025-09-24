@@ -5,3 +5,14 @@ This repository accompanies the preprint "Pattern Formation in Agent-Based and P
 The repository consists of two folders: MATLAB scripts, which are stand-alone scripts and generate the PDE figures and executable using MATLAB R2024a, and Python scripts, which are based on the _piegy_ package and generate the stochastic figures and runs on Python >=3.7
 
 For reference, below is a list of figures and the scripts that were used to reproduce each of them.
+
+- Figure 4.1: Run NP_criticalD_u.m
+- Figure 4.2: Run NP_pattern.m
+- Figure 4.3: Run NP_pattern.m
+- Figure 4.4(a): Run NP_Du_uv_save.m to generate the data file NP_average_uv_50.csv. Then run NP_plot_uvDu.m with the NP_average_uv_50.csv file to produce the figure.
+- Figure 4.4(b): Run NP_Du_pi_save.m to generate the data file NP_average_pHD_50.csv. Then run NP_plot_piDv.m with the NP_average_pHD_50.csv file to produce the figure.
+- Figure 4.5: Run P_wv_criticalbounds_mix.m
+- Figure 5.1: Run P_wv_criticalbounds_mix.m
+- Figure 5.2(a): Run P_wv_uv_save.m to generate the data file P_average_uv.csv. Then run P_plot_uvWv.m with the P_average_uv.csv file to produce the figure.
+- Figure 5.2(b): Run P_wv_uv_save.m to generate the data file P_average_pi.csv. Then run P_plot_piWv.m with the P_average_pi.csv file to produce the figure.
+- Figure 6.1: Run Nonlocal_trBdetB.m
