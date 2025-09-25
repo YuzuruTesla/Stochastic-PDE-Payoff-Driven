@@ -1,8 +1,6 @@
 '''
 Runs a Demo 1D model.
 Corresponds to Figure 3.1 and 3.2 in Section 3.1
-
-Recommend running this script directly.
 '''
 
 from piegy import simulation, figures
@@ -46,11 +44,12 @@ check_overflow = False
 mod = simulation.model(N, M, maxtime, record_itv, sim_time, boundary, init_popu, matrices, patch_params, 
                         print_pct = print_pct, seed = seed, check_overflow = check_overflow)
 simulation.run(mod)
+# You can save the model by uncommenting the line below
+# save(mod, "demo_model")
 
 
 
-
-####  Figure 3.2  ####
+####  Plotting  ####
 
 # averaging over the time interval: 95% ~ 100% of max_time
 start = int(0.95 * mod.max_record)

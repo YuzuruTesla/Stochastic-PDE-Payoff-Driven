@@ -1,5 +1,5 @@
 '''
-Contains helper functions used to produce many figures.
+Contains helper functions used to produce figures.
 '''
 
 import numpy as np
